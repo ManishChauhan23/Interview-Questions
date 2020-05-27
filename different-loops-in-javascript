@@ -1,0 +1,34 @@
+> for...in and forEach loops skips Empty values in an array.
+> for...of and regular for loop doesn't skip any index of an array while iterating the array.
+
+let arr = [100, , 200];
+let arr2 = [100, undefined, 200];
+let f
+
+//for loop
+for (f = 0; f < arr.length; f++) {
+  console.log(arr[f]);
+  console.log(arr2[f]);
+}
+
+//forEach loop
+arr.forEach(val => console.log(val));
+arr2.forEach(val => console.log(val));
+
+//for...of
+for (f of arr) {
+  console.log(f);
+}
+
+for (f of arr2) {
+  console.log(f);
+}
+
+//for...in
+for (f in arr) {
+  console.log(arr[f]);
+}
+
+for (f in arr2) {
+  console.log(arr2[f]);
+}
