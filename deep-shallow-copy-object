@@ -1,1 +1,59 @@
 
+let playerDetails = {
+    name: 'Toni Kroos',
+    age: 28,
+    getNationality: function () {
+        return 'Germany'
+    }
+};
+
+// let dummyObject = playerDetails;      //Shallow Copy i.e.Copy by reference
+
+// dummyObject.name = 'Mesut Ozil';
+// dummyObject.age = 30;
+
+// console.log(playerDetails);           //Changes will also reflect in Original Object
+
+//There are various ways of Deep copy an Object i.e. Copy by Value
+//We can deep copy an object by using the regular for loop or for...in loop.
+//But we will discuss some other approach.
+
+//Using Spread Operator
+
+// const dummyObject = { ...playerDetails };
+
+// dummyObject.name = 'Mesut Ozil';
+// dummyObject.age = 30;
+
+// console.log(playerDetails);  
+// console.log(dummyObject);
+
+//Using Object.assign
+
+// const dummyObject = Object.assign({}, playerDetails);
+
+// dummyObject.name = 'Mesut Ozil';
+// dummyObject.age = 30;
+
+// console.log(playerDetails);
+// console.log(dummyObject);
+
+//Using stringify and parse
+
+const dummyObject = JSON.parse(JSON.stringify(playerDetails));
+
+dummyObject.name = 'Mesut Ozil';
+dummyObject.age = 30;
+
+console.log(playerDetails);
+console.log(dummyObject);
+
+//Note: Spread Operator and Object.assign doesn't deep copy nested object.
+//they shallow copy all nested object.To deep copy nested values,we can use
+//JSON.parse and JSON.stringify.But one drawback with this method is that they
+//dont copy function or any other reference type values.
+
+
+
+
+
