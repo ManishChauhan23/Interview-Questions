@@ -1,1 +1,35 @@
 
+let arr = [100, 200, 300, 400];
+
+let arr2 = arr       //Shallow Copy i.e.Copy by Reference
+
+arr2[0] = 0;
+arr2[3] = 0;
+
+console.log(arr);          //[0, 200, 300, 0]
+
+//Deep Copy
+
+let arr3 = [100, 200, 300, 400];
+let arr4 = [...arr3];       //Using Spread Operator
+
+arr4[0] = 1;
+arr4[3] = 1;
+
+console.log(arr3);          //[100, 200, 300, 400]
+console.log(arr4);          //[1, 200, 300, 1]
+
+let arr5 = arr3.slice();    //Using Slice
+arr5[0] = 2;
+arr5[3] = 2;
+console.log(arr5)          //[ 2, 200, 300, 2 ]
+console.log(arr3)          //[100, 200, 300, 400]
+
+//let arr6 = arr3
+
+
+let arr6 = Array.from(arr3);  //Using Array.from()
+arr6[0] = 3
+arr6[3] = 3
+console.log(arr6)          //[3, 200, 300, 3]
+console.log(arr3)           //[100, 200, 300, 400]
