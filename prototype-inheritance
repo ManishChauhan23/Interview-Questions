@@ -1,1 +1,26 @@
 
+const obj = {
+    lastName: 'Chauhan'
+}
+
+const obj2 = {
+    firstName: 'Manish'
+}
+
+console.log(obj2.firstName);
+console.log(obj2.lastName);
+console.log(obj.lastName);
+console.log(obj.firstName);
+
+obj2.__proto__ = obj
+
+
+console.log(obj2.firstName);
+console.log(obj2.lastName);
+
+//We can also assign prototype at the time of Object creation
+
+// obj2 = {
+//     __proto__: obj,
+//     firstName: 'Manish'
+// };
