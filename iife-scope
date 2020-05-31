@@ -1,1 +1,8 @@
+const foo = 100;
 
+(function IIFE(a, b) {
+    var foo = 200;
+    console.log(foo + a + b);
+})(3, 4);
+
+console.log(foo);
