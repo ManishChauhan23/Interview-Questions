@@ -1,0 +1,12 @@
+let obj = {
+    a: 1
+}
+
+function foo() {
+    console.log(this)
+}
+
+const m = foo.bind(obj);
+m();
+const x = foo.bind(obj);
+new x();
