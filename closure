@@ -1,1 +1,12 @@
+function sum(x) {
+    return function (y) {
+        if (y) {
+            return sum(x + y);
+        } else {
+           return  x
+        }   
+    }
+}
+
+console.log(sum(1)(2)(3)(4)(5)()); 
 
